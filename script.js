@@ -24,7 +24,7 @@ const getCurrentWeather = async() => {
     const inputCity = input.value;
 
     //Récupération des données de geo api
-    const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${inputCity}&limit=5&appid=${apiKey}`);
+    const response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${inputCity}&limit=5&appid=${apiKey}`);
     
     //Attente de la réponse et sa conversion en json
     const coordonnees = await response.json();
