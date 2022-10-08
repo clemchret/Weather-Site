@@ -1,0 +1,4 @@
+- bouton favoris qui vérifie aussi si la ville est déjà en favoris
+- stockage des favoris dans le localstorage et affichage dans un menu burger
+- ville pas valide ou pas entrée
+- icons custom
