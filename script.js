@@ -100,7 +100,7 @@ const getCurrentWeather = async() => {
     `;
 
     //Test précipitations map
-    map.innerHTML = `<img src="https://tile.openweathermap.org/map/precipitation_new/6/2/2.png?appid=${apiKey}" alt="">`;
+    //map.innerHTML = `<img src="https://tile.openweathermap.org/map/precipitation_new/6/2/2.png?appid=${apiKey}" alt="">`;
 
 
     //Météo toutes les 3h sur 5j

@@ -22,28 +22,28 @@ body{
 /*Formulaire*/
 .city-form{
     margin: 40px 0;
+
+    input{
+        color: #fff;
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid $font-color;
+        width: 100%;
+    }
+    input:focus{
+        outline: none;
+    }
+    
+    button{
+        border: 2px solid $font-color;
+    }
+    
+    button:hover{
+        background-color: $background-color;
+        color: $font-color;
+    }
 }
 
-.city-form input{
-    color: #fff;
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid $font-color;
-    width: 100%;
-}
-
-.city-form input:focus{
-    outline: none;
-}
-
-.city-form button{
-    border: 2px solid $font-color;
-}
-
-.city-form button:hover{
-    background-color: $background-color;
-    color: $font-color;
-}
 
 .form-field{
     display: flex;

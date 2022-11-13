@@ -19,7 +19,6 @@ body {
 .city-form {
   margin: 40px 0;
 }
-
 .city-form input {
   color: #fff;
   background-color: transparent;
@@ -27,15 +26,12 @@ body {
   border-bottom: 2px solid rgb(250, 250, 250);
   width: 100%;
 }
-
 .city-form input:focus {
   outline: none;
 }
-
 .city-form button {
   border: 2px solid rgb(250, 250, 250);
 }
-
 .city-form button:hover {
   background-color: rgb(34, 34, 34);
   color: rgb(250, 250, 250);
