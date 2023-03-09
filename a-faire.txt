@@ -1,4 +1,7 @@
 - bouton favoris qui vérifie aussi si la ville est déjà en favoris
+- menu favoris : affichage des villes et condition si aps de ville
+- ajouter le fait de pouvoir supprimer une ville depuis le menu ?
+- bouton refresh bug ?
 - stockage des favoris dans le localstorage et affichage dans un menu burger
 - ville pas valide ou pas entrée
 - icons custom
