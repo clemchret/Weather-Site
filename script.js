@@ -204,8 +204,37 @@ function menuFavouritesDisplay (){
             `
             <li class="nav-item">
                 <a class="nav-link href="#">${ville}</a>
+                <i class="fa-regular fa-trash-can"></i>
             </li>
             `;
         });
     }
+
+    //Fonction de suppression depuis le menu latéral
+    const deleteIcon = document.querySelectorAll(".nav-item .fa-trash-can");
+    
+    for (let i = 0; i < deleteIcon.length; i++) {
+        deleteIcon[i].addEventListener("click", function() {
+            const villeToDelete = this.previousElementSibling.textContent;
+            let villes = JSON.parse(localStorage.getItem("Ville")) || [];
+            const index = villes.indexOf(villeToDelete);
+            if (index !== -1) {
+              villes.splice(index, 1);
+              localStorage.setItem("Ville", JSON.stringify(villes));
+            }
+            menuFavouritesDisplay();
+        });
+    }
+
+    //Fonction qui mène de 
+    const listedCities = document.querySelectorAll(".nav-item .nav-link");
+
+    for (let i = 0; i < listedCities.length; i++) {
+        listedCities[i].addEventListener("click", function() {
+            const villeToGoTo = this.textContent;
+            input.value = villeToGoTo;
+            getCurrentWeather();   
+        });
+    }
 }
+

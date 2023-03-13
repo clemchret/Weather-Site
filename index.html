@@ -18,60 +18,65 @@
     <script defer src="script.js"></script>
 </head>
 <body>
-    <section id="navigation">
+    <header>
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
-              <a class="navbar-brand" href="#">OpenWeather</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="offcanvas offcanvas-start" tabindex="-1" id="navbarOffcanvas" aria-labelledby="navbarOffcanvasLabel">
-                <div class="offcanvas-header">
-                  <h2 class="offcanvas-title" id="navbarOffcanvasLabel">Villes favorites <i class="fa-solid fa-location-dot"></i></h2>
-                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <div class="navbar-brand">
+                    <h1>Celestial forecasts</h1>
+                    <a class="navbar-brand" href="https://openweathermap.org/" target="_blank">using OpenWeather's API</a>
                 </div>
-                <div class="offcanvas-body">
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  </ul>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="navbarOffcanvas" aria-labelledby="navbarOffcanvasLabel">
+                    <div class="offcanvas-header">
+                        <h2 class="offcanvas-title" id="navbarOffcanvasLabel">Villes favorites <i class="fa-solid fa-location-dot"></i></h2>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        </ul>
+                    </div>
                 </div>
-              </div>
             </div>
         </nav>
-    </section>
-    <section id="top-banner">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-8 col-lg-6 col-xl-4">
-                    <form class="city-form">
-                        <div class="form-field">
-                            <input type="text" value="" placeholder="Entrez une ville">
-                            <button type="submit">Envoyer</button>
-                        </div>
-                        <span class="no-city-error"></span>
-                    </form>
+    </header>
+    <main>
+        <section id="top-banner">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 col-lg-6 col-xl-4">
+                        <form class="city-form">
+                            <div class="form-field">
+                                <input type="text" value="" placeholder="Entrez une ville">
+                                <button type="submit">Envoyer</button>
+                            </div>
+                            <span class="no-city-error"></span>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section id="main-weather">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12">
-                    <div class="main"></div>
-                    <div class="hourly-weather"></div>
-                    <div class="details text-center"></div>
+        </section>
+        <section id="main-weather">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="main"></div>
+                        <div class="hourly-weather"></div>
+                        <div class="details text-center"></div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section id="rain-map">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="rain-map"></div>
+        </section>
+        <section id="rain-map">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="rain-map"></div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 </body>
 </html>

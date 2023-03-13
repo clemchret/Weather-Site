@@ -168,7 +168,22 @@ body{
     color:rgb(255, 187, 0);
 }
 
-/*Menu burger*/
+/*Navbar + menu latéral*/
+.navbar-brand{
+    h1{
+        letter-spacing: 3px;
+        font-size: 30px;
+        font-weight: 900;
+    }
+    a{
+        font-weight: 300;
+        color: #898989 !important;
+    }
+    a:hover{
+        color: #ffffff !important;
+    }
+}
+
 .navbar-toggler {
     border: none;
 }
@@ -179,12 +194,6 @@ body{
     background-size: contain;
     width: 24px;
     height: 24px;
-}
-
-@media (min-width: 992px){
-    .navbar-expand-lg .navbar-toggler {
-        display: block;
-    }
 }
 
 .offcanvas{
@@ -200,12 +209,40 @@ body{
 }
 
 .navbar-dark .navbar-nav .nav-link{
-    font-size: 30px;
     cursor: pointer;
 }
 
-.nav-link:hover{
+.nav-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
+    a{
+        width: 100%;
+        font-size: 22px;
+    }
+    i{
+        font-size: 18px;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        padding: 10px;
+        color: rgb(255,255,255);
+    }
+    i:hover{
+        color:rgb(255, 0, 0);
+    }
+}
+
+.nav-item:hover{
+    i{
+    visibility: visible;
+    opacity: 0.75;
+    }
+    a{
+        color: rgba(255,255,255,.75) !important;
+    }
 }
 
 .navbar-dark .navbar-toggler:hover{
@@ -214,4 +251,21 @@ body{
 
 .navbar-dark .navbar-toggler:focus, .navbar-dark .navbar-toggler{
     color: transparent;
+}
+
+
+/*Medias queries*/
+@media (max-width: 991px) {
+    .nav-item{
+        i{
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+@media (min-width: 992px){
+    .navbar-expand-lg .navbar-toggler {
+        display: block;
+    }
 }
