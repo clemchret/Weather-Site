@@ -1,4 +1,3 @@
-- bug si jsupprime une ville du menu latéral en étant tj sur la page météo de la ville, l'étoile reste
 - trouver mieux que input = ville pour menu latéral
 - bouton refresh bug ?
 - ville pas valide ou pas entrée
