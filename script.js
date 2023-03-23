@@ -139,7 +139,7 @@ const getCurrentWeather = async() => {
         `
         <div class="ThreeHoursWeather">
             <div class="ThreeHoursTemp">${Math.round(previsionData.list[i].main.temp)}°C</div>
-            <div class="ThreeHoursTemp"><i class="fa-solid fa-cloud-showers-heavy"></i> ${(previsionData.list[i].pop)*100}%</div>
+            <div class="ThreeHoursTemp"><i class="fa-solid fa-cloud-showers-heavy"></i> ${Math.round(previsionData.list[i].pop*100)}%</div>
             <img src="https://openweathermap.org/img/wn/${previsionData.list[i].weather[0].icon}@2x.png" alt="${previsionData.list[i].weather[0].description}" title="${previsionData.list[i].weather[0].description}">
             <div class="ThreeHoursTime">${weatherTimeConv}</div>
         </div>
