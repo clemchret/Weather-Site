@@ -73,11 +73,11 @@ const getCurrentWeather = async() => {
     main.innerHTML = 
     `
     <div class="row">
-        <div class="col-6 text-left">
+        <div class="col-12 col-sm-12 col-md-6">
                 <div class="weather-icon main-temperature">${Math.round(cityData.main.temp)}°C <img src="${icon}" alt="${cityData.weather[0].description}" title="${cityData.weather[0].description}"></div>
-                <div class="feels-like">${Math.round(cityData.main.feels_like)}°C ressenti</div>
+                <div class="feels-like">(${Math.round(cityData.main.feels_like)}°C ressenti)</div>
         </div>
-        <div class="col-6 text-right">
+        <div class="col-12 col-sm-12 col-md-6">
             <div class="city-description-container">
                 <div class="city">${cityData.name}, ${cityData.sys.country} ${starIcon}</div>
                 <div class="description">${cityData.weather[0].description}</div>
@@ -190,6 +190,7 @@ const getCurrentWeather = async() => {
 function menuFavouritesDisplay (){
     const villes = JSON.parse(localStorage.getItem("Ville")) || [];
     const navbar = document.querySelector(".navbar-nav");
+
     //Ligne suivante pas nécessaire lors du chargement au début mais si la fonction ajout/suppression est utilisée, cela permet de clear les villes chargées au début et d'afficher la nouvelle liste
     navbar.innerHTML="";
 
@@ -207,6 +208,7 @@ function menuFavouritesDisplay (){
                 <i class="fa-regular fa-trash-can"></i>
             </li>
             `;
+
             //Fonction de suppression depuis le menu latéral
             const deleteIcon = document.querySelectorAll(".nav-item .fa-trash-can");
 
@@ -222,20 +224,22 @@ function menuFavouritesDisplay (){
                     menuFavouritesDisplay();
 
                     //Je supprime l'étoile orange sur la page principale
-                    const favouriteButton = document.querySelector(".city .fa-star");
-                    favouriteButton.classList.toggle('fa-regular');
-                    favouriteButton.classList.toggle('fa-solid');
+                    if(villeToDelete === city.name){
+                        const favouriteButton = document.querySelector(".city .fa-star");
+                        favouriteButton.classList.toggle('fa-regular');
+                        favouriteButton.classList.toggle('fa-solid');
+                    }
                 });
             }
         
-            //Fonction qui ajout l'action sur la ville enregistrée dans le menu latéral
+            //Fonction qui ajout l'action d'afficher la ville enregistrée dans le menu latéral
             const listedCities = document.querySelectorAll(".nav-item .nav-link");
         
             for (let i = 0; i < listedCities.length; i++) {
                 listedCities[i].addEventListener("click", function() {
                     const villeToGoTo = this.textContent;
                     input.value = villeToGoTo;
-                    
+
                     getCurrentWeather();   
                 });
             }

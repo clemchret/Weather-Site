@@ -50,20 +50,26 @@ body {
 .weather-icon.main-temperature {
   align-items: center;
   display: flex;
+  justify-content: space-between;
+  margin: 15px 0 0 0;
 }
 
 .main-temperature {
-  font-size: 60px;
+  font-size: 4rem;
   font-weight: 600;
 }
 
 .city {
-  font-size: 40px;
+  font-size: 2rem;
   font-weight: 400;
 }
 
 .description {
-  font-size: 25px;
+  font-size: 1rem;
+}
+
+.feels-like {
+  color: #898989;
 }
 
 .city-description-container {
@@ -71,6 +77,8 @@ body {
   justify-content: center;
   flex-direction: column;
   height: 100%;
+  text-align: center;
+  margin: 15px 0 0 0;
 }
 
 .refresh {
@@ -149,10 +157,6 @@ body {
   padding: 10px 0 10px 10px;
 }
 
-.fa-regular.fa-star:hover {
-  color: rgb(255, 187, 0);
-}
-
 .fa-solid.fa-star {
   color: rgb(255, 187, 0);
 }
@@ -160,15 +164,12 @@ body {
 /*Navbar + menu latéral*/
 .navbar-brand h1 {
   letter-spacing: 3px;
-  font-size: 30px;
+  font-size: 1.7rem;
   font-weight: 900;
 }
 .navbar-brand a {
   font-weight: 300;
   color: #898989 !important;
-}
-.navbar-brand a:hover {
-  color: #ffffff !important;
 }
 
 .navbar-toggler {
@@ -210,27 +211,10 @@ body {
 }
 .nav-item i {
   font-size: 18px;
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.2s ease;
-  cursor: pointer;
   padding: 10px;
   color: rgb(255, 255, 255);
-}
-.nav-item i:hover {
-  color: rgb(255, 0, 0);
-}
-
-.nav-item:hover i {
   visibility: visible;
-  opacity: 0.75;
-}
-.nav-item:hover a {
-  color: rgba(255, 255, 255, 0.75) !important;
-}
-
-.navbar-dark .navbar-toggler:hover {
-  color: #fff;
+  opacity: 1;
 }
 
 .navbar-dark .navbar-toggler:focus, .navbar-dark .navbar-toggler {
@@ -238,14 +222,38 @@ body {
 }
 
 /*Medias queries*/
-@media (max-width: 991px) {
-  .nav-item i {
-    visibility: visible;
-    opacity: 1;
+@media (min-width: 768px) {
+  .city-description-container {
+    text-align: right;
+  }
+  .weather-icon.main-temperature {
+    justify-content: inherit;
   }
 }
 @media (min-width: 992px) {
+  .fa-regular.fa-star:hover {
+    color: rgb(255, 187, 0);
+  }
+  .navbar-brand a:hover {
+    color: #ffffff !important;
+  }
   .navbar-expand-lg .navbar-toggler {
     display: block;
+  }
+  .nav-item i {
+    transition: all 0.2s ease;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .nav-item i:hover {
+    color: rgb(255, 0, 0);
+  }
+  .nav-item:hover i {
+    visibility: visible;
+    opacity: 0.75;
+  }
+  .nav-item:hover a {
+    color: rgba(255, 255, 255, 0.75) !important;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -59,25 +59,34 @@ body{
 .weather-icon.main-temperature{
     align-items: center;
     display: flex;
+    justify-content: space-between;
+    margin: 15px 0 0 0;
 }
 
 .main-temperature{
-    font-size: 60px;
+    font-size: 4rem;
     font-weight: 600;
 }
 .city{
-    font-size: 40px;
+    font-size: 2rem;
     font-weight: 400;
 }
 
 .description{
-    font-size: 25px;
+    font-size: 1rem;
 }
+
+.feels-like{
+    color: #898989 ;
+}
+
 .city-description-container{
     display: flex;
     justify-content: center;
     flex-direction: column;
     height: 100%;
+    text-align: center;
+    margin: 15px 0 0 0;
 }
 
 .refresh{
@@ -160,10 +169,6 @@ body{
     padding: 10px 0 10px 10px;
 }
 
-.fa-regular.fa-star:hover{
-    color:rgb(255, 187, 0);
-}
-
 .fa-solid.fa-star{
     color:rgb(255, 187, 0);
 }
@@ -172,15 +177,12 @@ body{
 .navbar-brand{
     h1{
         letter-spacing: 3px;
-        font-size: 30px;
+        font-size: 1.7rem;
         font-weight: 900;
     }
     a{
         font-weight: 300;
         color: #898989 !important;
-    }
-    a:hover{
-        color: #ffffff !important;
     }
 }
 
@@ -223,30 +225,11 @@ body{
     }
     i{
         font-size: 18px;
-        visibility: hidden;
-        opacity: 0;
-        transition: all 0.2s ease;
-        cursor: pointer;
         padding: 10px;
         color: rgb(255,255,255);
+        visibility: visible;
+        opacity: 1;
     }
-    i:hover{
-        color:rgb(255, 0, 0);
-    }
-}
-
-.nav-item:hover{
-    i{
-    visibility: visible;
-    opacity: 0.75;
-    }
-    a{
-        color: rgba(255,255,255,.75) !important;
-    }
-}
-
-.navbar-dark .navbar-toggler:hover{
-    color: #fff;
 }
 
 .navbar-dark .navbar-toggler:focus, .navbar-dark .navbar-toggler{
@@ -255,17 +238,62 @@ body{
 
 
 /*Medias queries*/
-@media (max-width: 991px) {
-    .nav-item{
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .city-description-container{
+        text-align: right;
+    }
+
+    .weather-icon.main-temperature{
+        justify-content: inherit;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    
+    .fa-regular.fa-star:hover{
+        color:rgb(255, 187, 0);
+    }
+
+    .navbar-brand{
+        a:hover{
+            color: #ffffff !important;
+        }
+    }
+    
+    .navbar-expand-lg .navbar-toggler {
+        display: block;
+    }
+
+    .nav-item{  
         i{
-            visibility: visible;
-            opacity: 1;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            visibility: hidden;
+            opacity: 0;
+        }
+        i:hover{
+            color:rgb(255, 0, 0);
+        }
+    }
+  
+    .nav-item:hover{
+        i{
+        visibility: visible;
+        opacity: 0.75;
+        }
+        a{
+            color: rgba(255,255,255,.75) !important;
         }
     }
 }
 
-@media (min-width: 992px){
-    .navbar-expand-lg .navbar-toggler {
-        display: block;
-    }
-}
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {}

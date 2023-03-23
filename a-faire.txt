@@ -1,4 +1,6 @@
 - trouver mieux que input = ville pour menu latéral
 - bouton refresh bug ?
-- ville pas valide ou pas entrée
+- bug supprimer l'étoile lors d'une suppression depuis le menu latéral : si je supprime n'importe quelle ville, ça supprime l'étoile => pas bon
+- message ville pas valide
+- se baser sur la ville + pays pour favoris
 - icons custom
