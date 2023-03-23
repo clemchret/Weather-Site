@@ -4,6 +4,10 @@ $background-color: rgb(34, 34, 34);
 $error-color: rgb(230, 0, 0);
 
 /*Main*/
+html{
+    font-size: 16px;
+}
+
 body{
     font-family: 'Josefin Sans', sans-serif;
     background: $background-color;
@@ -21,7 +25,7 @@ body{
 
 /*Formulaire*/
 .city-form{
-    margin: 40px 0;
+    margin: 2.5rem 0;
 
     input{
         color: #fff;
@@ -60,11 +64,11 @@ body{
     align-items: center;
     display: flex;
     justify-content: space-between;
-    margin: 15px 0 0 0;
+    margin: 1rem 0 0 0;
 }
 
 .main-temperature{
-    font-size: 4rem;
+    font-size: 3.75rem;
     font-weight: 600;
 }
 .city{
@@ -86,12 +90,12 @@ body{
     flex-direction: column;
     height: 100%;
     text-align: center;
-    margin: 15px 0 0 0;
+    margin: 1rem 0 0 0;
 }
 
 .refresh{
     padding: 5px 10px;
-    margin: 30px 0 0 0;
+    margin: 2rem 0 0 0;
     border: 2px solid $font-color;
     border-radius: 20px;
 }
@@ -105,7 +109,7 @@ body{
 .details-row{
     background:rgb(50, 50, 50);
     padding: 10px;
-    margin: 20px 0;
+    margin: 1.5rem 0;
     border-radius: 20px;
     box-shadow: 0px 0px 20px #0e0e0e73;
 }
@@ -149,14 +153,19 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 15px;
+    padding: 1rem;
+    min-width: 90px;
 
     img{
-        width: 50px;
+        width: 90px;
     }
 
     .ThreeHoursTime{
         color: #7c7c7c;
+    }
+
+    .fa-cloud-showers-heavy{
+        font-size: 0.75rem;
     }
 }
 
@@ -289,6 +298,13 @@ body{
         a{
             color: rgba(255,255,255,.75) !important;
         }
+    }
+    .city{
+        font-size: 2.5rem;
+    }
+
+    .description{
+        font-size: 1.5rem;
     }
 }
 

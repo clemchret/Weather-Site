@@ -75,7 +75,7 @@ const getCurrentWeather = async() => {
     <div class="row">
         <div class="col-12 col-sm-12 col-md-6">
                 <div class="weather-icon main-temperature">${Math.round(cityData.main.temp)}°C <img src="${icon}" alt="${cityData.weather[0].description}" title="${cityData.weather[0].description}"></div>
-                <div class="feels-like">(${Math.round(cityData.main.feels_like)}°C ressenti)</div>
+                <div class="feels-like">Max. ${Math.round(cityData.main.temp_max)}°C / Min. ${Math.round(cityData.main.temp_min)}°C - (Ressenti ${Math.round(cityData.main.feels_like)}°C)</div>
         </div>
         <div class="col-12 col-sm-12 col-md-6">
             <div class="city-description-container">
@@ -108,10 +108,6 @@ const getCurrentWeather = async() => {
     `
     <div class="random">
         <div class="row details-row">
-            <div class="col-6"><i class="fa-solid fa-temperature-low"></i><br/>Temp.Min<br/>${Math.round(cityData.main.temp_min)}°C</div>
-            <div class="col-6"><i class="fa-solid fa-temperature-high"></i><br/>Temp.Max<br/>${Math.round(cityData.main.temp_max)}°C</div>
-        </div>
-        <div class="row details-row">
             <div class="col-4"><i class="fa-solid fa-droplet"></i><br/>Humidité<br/>${cityData.main.humidity}%</div>
             <div class="col-4"><i class="fa-brands fa-cloudscale"></i><br/>Pression<br/>${cityData.main.pressure} hpa</div>
             <div class="col-4"><i class="fa-solid fa-wind"></i><br/>Vent<br/>${Math.round(cityData.wind.speed)} km/h</div>
@@ -143,6 +139,7 @@ const getCurrentWeather = async() => {
         `
         <div class="ThreeHoursWeather">
             <div class="ThreeHoursTemp">${Math.round(previsionData.list[i].main.temp)}°C</div>
+            <div class="ThreeHoursTemp"><i class="fa-solid fa-cloud-showers-heavy"></i> ${(previsionData.list[i].pop)*100}%</div>
             <img src="https://openweathermap.org/img/wn/${previsionData.list[i].weather[0].icon}@2x.png" alt="${previsionData.list[i].weather[0].description}" title="${previsionData.list[i].weather[0].description}">
             <div class="ThreeHoursTime">${weatherTimeConv}</div>
         </div>
