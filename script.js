@@ -119,8 +119,43 @@ const getCurrentWeather = async() => {
     </div>
     `;
 
-    //Test précipitations map
-    //map.innerHTML = `<img src="https://tile.openweathermap.org/map/precipitation_new/6/2/2.png?appid=${apiKey}" alt="">`;
+
+    //Test précipitations map avec Open Layers
+    let map = document.getElementById('map');
+    map.innerHTML = "";
+
+    //Création de la map
+    map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM({
+                url: 'https://{a-d}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
+                attributions: '© OpenStreetMap contributors',
+                maxZoom: 19,
+                crossOrigin: 'anonymous'
+            }),
+            visible: true
+          })
+        ],
+        view: new ol.View({
+          center: ol.proj.fromLonLat([coordonnees[0].lon, coordonnees[0].lat]),
+          zoom: 7,
+        })
+    });
+
+    //Tiles pour les précipitations
+    let precipitationLayer = new ol.layer.Tile({
+        source: new ol.source.XYZ({
+          url: 'https://{a-c}.tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=246a4b38d08f488b11e50c20008365cb',
+          attributions: 'Map data &copy; <a href="https://openweathermap.org/">OpenWeatherMap</a>',
+          tileSize: 256,
+          maxZoom: 19,
+          minZoom: 0,
+          opacity: 0.8
+        })
+    });
+    map.addLayer(precipitationLayer);
 
 
     //Météo toutes les 3h sur 5j

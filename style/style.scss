@@ -141,6 +141,14 @@ body{
     color: rgb(255 150 59);
 }
 
+/*Précipitations*/
+#map{
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 0 0 1rem 0;
+}
+
 /*Météo 3h*/
 .hourly-weather{
     display: flex;
